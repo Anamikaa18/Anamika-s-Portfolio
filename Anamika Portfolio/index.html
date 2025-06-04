@@ -1,973 +1,556 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamika Verma | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles */
+        .hero-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a78bfa 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .skill-badge {
+            transition: all 0.2s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadein {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-indigo-600">Anamika Verma</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-indigo-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-    <head>
-        <!-- meta data -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white pb-3">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50">Home</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50">About</a>
+            <a href="#experience" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50">Experience</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50">Projects</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50">Contact</a>
+        </div>
+    </nav>
 
-        <!--font-family-->
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
-        
-        <!-- title of site -->
-        <title>Anamika Verma </title>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 items-center animate-fadein">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Anamika Verma</h1>
+                    <p class="text-xl md:text-2xl mb-6">Versatile Software Engineer | AI Researcher | R&D in AI/ML</p>
+                    <p class="text-indigo-100 mb-8">Passionate about problem solving, systems design and using intelligent technology to solve real-world problems.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/" target="_blank" class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-50 transition flex items-center">
+                            <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/" target="_blank" class="bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-800 transition flex items-center">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="bg-white rounded-xl shadow-xl p-4 max-w-md mx-auto">
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg p-4 text-center">
+                            <div class="bg-white rounded-full w-32 h-32 mx-auto mb-4 overflow-hidden shadow-md">
+                                <img src="https://plus.unsplash.com/premium_vector-1716905507876-7aa3de5e47bd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fHww" alt="Anamika Verma" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Contact Info</h3>
+                            <div class="mt-4 space-y-2 text-indigo-100">
+                                <p><i class="fas fa-envelope mr-2"></i> anamikana18@gmail.com</p>
+                                <p><i class="fas fa-globe mr-2"></i> www.anamikaverma.com</p>
+                                <p><i class="fas fa-phone mr-2"></i>-hidden</p>
+                            </div>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <a href="https://www.linkedin.com/in/Anamikana18/" class="text-white hover:text-indigo-200"><i class="fab fa-linkedin-in text-xl"></i></a>
+                                <a href="https://www.github.com/anamikaa18/" class="text-white hover:text-indigo-200"><i class="fab fa-github text-xl"></i></a>
+                                <a href="https://www.leetcode.com/anamikana18/" class="text-white hover:text-indigo-200"><i class="fas fa-code text-xl"></i></a>
+                                <a href="https://www.kaggle.com/Anamikana18/" class="text-white hover:text-indigo-200"><i class="fab fa-kaggle text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon1.png"/>
-       
-        <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadein">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 animate-fadein" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Professional Summary</h3>
+                    <p class="text-gray-600 mb-6">
+                        Software Engineer with strong fundamentals in algorithms, AI, and scalable systems. 
+                        Experience spans AI/ML research, NLP product development, and full-stack engineering. 
+                        Built and deployed AI systems impacting 50,000+ students. Currently pursuing MS in AI/ML. 
+                    </p>
+                    
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Research Interests</h3>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Natural Language Processing</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Information Retrieval</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">AI for Education</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Scalable Systems</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Responsible AI</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Technological Adaptations</span>
+                    </div>
+                </div>
+                
+                <div class="animate-fadein" style="animation-delay: 0.4s;">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Programming:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">C++</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Python</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">JavaScript</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Frameworks & Tools:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">TensorFlow</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">scikit-learn</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Hugging Face</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">React.js</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Node.js</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Next.js</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">MongoDB</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Systems & Platforms:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Unix/Linux</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">GitHub</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Colab</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Kaggle</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Cloud & DevOps:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">AWS</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">GCP</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Docker</span>
+                                <span class="skill-badge bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!--flat icon css-->
-		<link rel="stylesheet" href="assets/css/flaticon.css">
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadein">Experience</h2>
+            
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.1s;">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-600">AI/ML Research & Development Engineer</h3>
+                            <p class="text-gray-600">SR Edu Technologies Pvt. Ltd., Hyderabad-500001</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">May 2025 - Present</span>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-gray-600 pl-5 list-disc">
+                        <li>Leading AI/ML development for EdTech platforms, building adaptive learning models, NLP chatbots, and computer vision tools deployed across 150+ schools, impacting over 50,000+ students</li>
+                        <li>Conducting K–12 AI curriculum research and optimizing ML pipelines using real-world education data</li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-600">AI Curriculum Developer & Educator</h3>
+                            <p class="text-gray-600">GD Goenka Public School, Lucknow-226010</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Aug 2024 – Apr 2025</span>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-gray-600 pl-5 list-disc">
+                        <li>Delivered AI curriculum to grades 7–12 aligned with CBSE/Cambridge boards</li>
+                        <li>Mentored 10+ student projects involving ML, NLP, and ethical AI applications</li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.3s;">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-600">Research Scholar- AI/ML/NLP/LLM</h3>
+                            <p class="text-gray-600">Goel Institute of Technology and management, Lucknow-226010</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Jun 2024 – Sep 2024</span>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-gray-600 pl-5 list-disc">
+                        <li>Conducted research in NLP, emotion recognition, and ethical AI under academic mentorship</li>
+                        <li>Worked on transformer models and contributed to AI frameworks tailored for mental health-focused applications</li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-600">Software Engineer/ Developer</h3>
+                            <p class="text-gray-600">Netcamp Solutions Private Limited, Kolkata-70001</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Jul 2023- Jan 2024</span>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-gray-600 pl-5 list-disc">
+                        <li>Built full-stack MERN applications and implemented basic networking (TCP/IP) and security on Linux-based systems</li>
+                        <li>Contributed to backend logic and deployment for web and mobile platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadein">Projects</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-indigo-600">Mammo-Scan</h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Nov 2023</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Employed Logistic Regression in the TensorFlow machine learning framework to enhance breast cancer diagnosis accuracy, resulting in improved healthcare outcomes.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">TensorFlow</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Python</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Git</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.2s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-indigo-600">AI-Counsellor</h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Jan 2024</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Developing a full-stack web application for mental health counselling support for individuals with 24/7 availability.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">MERN</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">JavaScript</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Python</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Git</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">NLP</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">ML</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.3s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-indigo-600">Flipkart Customer Satisfaction Analysis</h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Dec 2025</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A machine learning-based classification model to analyze and predict Flipkart customer service satisfaction based on feedback and reviews.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Google Colab</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Git</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">ML</span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.4s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-indigo-600">Adaptive Learning Platform</h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Mar 2025</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        An intelligent tutoring system that adapts to student learning patterns using reinforcement learning techniques to personalize content delivery.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Python</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">TensorFlow</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">React</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">AWS</span>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.5s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-indigo-600">Sentiment Analysis for Social Media</h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Aug 2024</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A real-time sentiment analysis system processing social media streams using transformer models for accurate emotion detection.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">NLP</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Hugging Face</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Python</span>
+                        <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!--owl.carousel.css-->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-		
-        <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
-		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
-        
-        <!--style.css-->
-        <link rel="stylesheet" href="assets/css/style.css">
-        
-        <!--responsive.css-->
-        <link rel="stylesheet" href="assets/css/responsive.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		
-        <!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!-- Education Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadein">Education</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Education 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.1s;">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Woolf University, Europe</h3>
+                    <p class="text-gray-600 mb-4">2025-2027</p>
+                    <p class="font-medium mb-1">MS in Computer Science – AI & ML (ongoing)</p>
+                </div>
+                
+                <!-- Education 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Dr. APJ Abdul Kalam Technical University, India</h3>
+                    <p class="text-gray-600 mb-4">2020-2024</p>
+                    <p class="font-medium mb-1">B. Tech – Computer Science Engineering</p>
+                    <p class="text-gray-600">CGPA: 8.5/10</p>
+                </div>
+                
+                <!-- Education 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover animate-fadein" style="animation-delay: 0.3s;">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">Riverside Academy, Lucknow</h3>
+                    <p class="text-gray-600 mb-4">2019-2020</p>
+                    <p class="font-medium mb-1">Intermediate (ICSE Board)</p>
+                    <p class="text-gray-600">Percentage: 86.75%</p>
+                </div>
+            </div>
+            
+            <!-- Achievements -->
+            <div class="mt-16 animate-fadein" style="animation-delay: 0.3s;">
+                <h3 class="text-2xl font-semibold text-indigo-600 mb-6 text-center">Achievements</h3>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+                            <span>Shortlisted: Google LLC & Booking.com for SWE Internship summer 2025</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+                            <span>Top Performer: Scored 85-90 % with grade A in specifically Applied Mathematics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+                            <span>Recognized: Youngest PGT teacher at top school of the city</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-3"></i>
+                            <span>College Awards: Best Chess Player and Best Debater at college</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </head>
-	
-	<body>
-		<!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-		
-		<!-- top-area Start -->
-		<header class="top-area">
-			<div class="header-area">
-				<!-- Start Navigation -->
-			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-indigo-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadein">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="animate-fadein" style="animation-delay: 0.1s;">
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-4 text-indigo-300"></i>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-indigo-100">anamikana18@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-4 text-indigo-300"></i>
+                            <div>
+                                <h4 class="font-medium">Website</h4>
+                                <p class="text-indigo-100">www.anamikaverma.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-4 text-indigo-300"></i>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <p class="text-indigo-100">hidden</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mt-8 mb-4">Connect With Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/Anamikana18/" class="bg-white text-indigo-600 p-3 rounded-full hover:bg-indigo-100 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.github.com/anamikaa18/" class="bg-white text-indigo-600 p-3 rounded-full hover:bg-indigo-100 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.leetcode.com/anamikana18/" class="bg-white text-indigo-600 p-3 rounded-full hover:bg-indigo-100 transition">
+                            <i class="fas fa-code"></i>
+                        </a>
+                        <a href="https://www.kaggle.com/Anamikana18/" class="bg-white text-indigo-600 p-3 rounded-full hover:bg-indigo-100 transition">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="animate-fadein" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-semibold mb-4">Send Me a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-3 py-2 rounded bg-indigo-600 border border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 placeholder-indigo-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-3 py-2 rounded bg-indigo-600 border border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 placeholder-indigo-300">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-3 py-2 rounded bg-indigo-600 border border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 placeholder-indigo-300"></textarea>
+                        </div>
+                        <button type="submit" class="bg-white text-indigo-600 px-6 py-2 rounded-lg font-medium hover:bg-indigo-50 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			        <div class="container">
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Anamika Verma. All rights reserved.</p>
+        </div>
+    </footer>
 
-			            <!-- Start Header Navigation -->
-			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-			                    <i class="fa fa-bars"></i>
-			                </button>
-			                <a class="navbar-brand" href="index.html">Anamika Verma</a>
-			            </div><!--/.navbar-header-->
-			            <!-- End Header Navigation -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
 
-			            <!-- Collect the nav links, forms, and other content for toggling -->
-			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-			                <li class=" smooth-menu active"></li>
-			                    <li class=" smooth-menu"><a href="#education">education</a></li>
-			                    <li class="smooth-menu"><a href="#experience">experience</a></li>
-			                    <li class="smooth-menu"><a href="#profiles">profiles</a></li>
-			                    <li class="smooth-menu"><a href="#skills">skills</a></li>
-								<li class="smooth-menu"><a href="#links">Links</a></li>
-                                <li class="smooth-menu"><a href="#bootcamp">bootcamps</a></li>
-			                    <li class="smooth-menu"><a href="#contact">contact</a></li>
-			                </ul><!--/.nav -->
-			            </div><!-- /.navbar-collapse -->
-			        </div><!--/.container-->
-			    </nav><!--/nav-->
-			    <!-- End Navigation -->
-			</div><!--/.header-area-->
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
 
-		    <div class="clearfix"></div>
+        // Add active class to current section in navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
 
-		</header><!-- /.top-area-->
-		<!-- top-area End -->
-	
-		<!--welcome-hero start -->
-		<section id="welcome-hero" class="welcome-hero">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<div class="header-text">
-							<h2>hi <span>,</span> i am <br> anamika <br> verma <span>.</span>   </h2>
-							<p>Software Engineer and Artificial Intelligence Teacher specializing into Research, Applied Mathematics, AI/ML, Data Science and Development. </p>
-							<a href="assets/download/software_res0.pdf" download>download resume</a>
-						</div><!--/.header-text-->
-					</div><!--/.col-->
-				</div><!-- /.row-->
-			</div><!-- /.container-->
-
-		</section><!--/.welcome-hero-->
-		<!--welcome-hero end -->
-
-		<!--about start -->
-		<section id="about" class="about">
-			<div class="section-heading text-center">
-				<h2>about me</h2>
-			</div>
-			<div class="container">
-				<div class="about-content">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="single-about-txt">
-								<h3>
-									I'm an AI enthusiast, software developer, and aspiring researcher. With a strong foundation in Artificial Intelligence, Machine Learning, and Data Science, I specialize in building intelligent solutions that bridge the gap between technology and real-world problems.
-I have hands-on experience working with deep learning models, NLP, computer vision, and software engineering, backed by my research in AI-driven applications. My projects range from AI-powered chatbots to smart automation tools, and I’m always exploring innovative ways to leverage AI for social impact.
-Currently, I am preparing for GATE (Data Science & AI) and pursuing an online MS, with the long-term vision of contributing to cutting-edge AI research and technological advancements. Apart from my technical journey, I share knowledge through mentoring, teaching, and content creation, making AI more accessible to learners worldwide.
-								</h3>
-								<p>
-									When I’m not coding or researching, you’ll find me working on my fitness journey, brainstorming startup ideas, or refining my skills in competitive programming.
-Let’s connect and build something extraordinary together!
-
-								</p>
-								<!--<div class="row">
-									<div class="col-sm-4">
-										<div class="single-about-add-info">
-											<h3>phone</h3>
-											<p>987-123-6547</p>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="single-about-add-info">
-											<h3>email</h3>
-											<p>browny@info.com</p>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="single-about-add-info">
-											<h3>website</h3>
-											<p>www.brownsine.com</p>
-										</div>
-									</div>
-								</div>-->
-							</div>
-						</div>
-						<div class="col-sm-offset-1 col-sm-5">
-							<div class="single-about-img">
-								<img src="assets/images/about/Desktop - 1 (4) (1) (1).png" alt="profile_image">
-								<div class="about-list-icon">
-										<ul>
-											<li>
-												<a href="https://www.leetcode.com/Anamikana18/" target="_blank">
-													<i class="fa-solid fa-code"></i> <!-- Leetcode doesn't have an official FA icon -->
-												</a>
-											</li><!-- / li -->
-											<li>
-												<a href="https://www.kaggle.com/Anamikana18/" target="_blank">
-													<i class="fab fa-kaggle"></i>
-												</a>
-											</li><!-- /li -->
-											<li>
-												<a href="https://www.youtube.com/@YourChannel" target="_blank">
-													<i class="fab fa-youtube"></i>
-												</a>
-											</li><!-- / li -->
-											<li>
-												<a href="https://www.linkedin.com/in/Anamikana18" target="_blank">
-													<i class="fab fa-linkedin"></i>
-												</a>
-											</li><!-- / li -->
-											<li>
-												<a href="https://www.instagram.com/anamikaverma.ai/" target="_blank">
-													<i class="fab fa-instagram"></i>
-												</a>
-											</li><!-- / li -->
-										</ul>
-										
-									<!-- / ul -->
-								</div><!-- /.about-list-icon -->
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</section><!--/.about-->
-		<!--about end -->
-		
-		<!--education start -->
-		<section id="education" class="education">
-			<div class="section-heading text-center">
-				<h2>education</h2>
-			</div>
-			<div class="container">
-				<div class="education-horizontal-timeline">
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="single-horizontal-timeline">
-								<div class="experience-time">
-									<h2>2025 - 2027</h2>
-									<h3>MS - masters <span>of </span> Science - CS in Artificial Intelligence and Machine Learning</h3>
-								</div><!--/.experience-time-->
-								<div class="timeline-horizontal-border">
-									<i class="fa fa-circle" aria-hidden="true"></i>
-									<span class="single-timeline-horizontal"></span>
-								</div>
-								<div class="timeline">
-									<div class="timeline-content">
-										<h4 class="title">
-											Woolf University
-										</h4>
-										<h5>Malta, Europe</h5>
-										<p class="description">
-											I am currently pursuing a Master’s in Computer Science – AI & ML through AlmaBetter Innovarsity in collaboration with Woolf University, an accredited institution following the European Credit Transfer and Accumulation System (ECTS) with 90 ECTS credits. This program equips me with advanced expertise in artificial intelligence, machine learning, and research-driven problem-solving. My goal is to leverage this education to contribute to cutting-edge AI innovations, advance my research ambitions, and establish myself as a leading AI engineer and researcher in the industry.
-										</p>
-									</div><!--/.timeline-content-->
-								</div><!--/.timeline-->
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="single-horizontal-timeline">
-								<div class="experience-time">
-									<h2>2020 - 2024</h2>
-									<h3>bachelor <span>of </span> Technology in computer science & Engineering</h3>
-								</div><!--/.experience-time-->
-								<div class="timeline-horizontal-border">
-									<i class="fa fa-circle" aria-hidden="true"></i>
-									<span class="single-timeline-horizontal"></span>
-								</div>
-								<div class="timeline">
-									<div class="timeline-content">
-										<h4 class="title">
-											Dr. APJ Abdul Kalam Technical university
-										</h4>
-										<h5>Lucknow, Uttar Pradesh</h5>
-										<p class="description">
-											I hold a B.Tech in Computer Science & Engineering from Dr. A.P.J. Abdul Kalam Technical University (AKTU) with a CGPA of 8.0. I secured an A grade in Applied Engineering Mathematics 1 & 2, demonstrating strong analytical and problem-solving skills. With a firm grasp of core CS subjects like Data Structures, Algorithms, Operating Systems, and Databases, I have gained hands-on experience in AI-driven projects. Now, I am transitioning into AI research, focusing on machine learning, NLP, and deep learning, with a passion for developing innovative AI solutions for real-world challenges.
-										</p>
-									</div><!--/.timeline-content-->
-								</div><!--/.timeline-->
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="single-horizontal-timeline">
-								<div class="experience-time">
-									<h2>2019 - 2020</h2>
-									<h3>CISCE Intermediate with Physics Chemistry Maths</h3>
-								</div><!--/.experience-time-->
-								<div class="timeline-horizontal-border">
-									<i class="fa fa-circle" aria-hidden="true"></i>
-									<span class="single-timeline-horizontal spacial-horizontal-line
-									"></span>
-								</div>
-								<div class="timeline">
-									<div class="timeline-content">
-										<h4 class="title">
-											Riverside Academy
-										</h4>
-										<h5>Lucknow, Uttar Pradesh</h5>
-										<p class="description">
-											I completed my Class 12th with PCM from Riverside Academy, where I balanced academics with leadership and extracurricular excellence. As the Head Girl, I actively contributed to school development, initiating clubs, extracurricular activities, and school maintenance reports presented to the principal. My passion for literature led me to participate in CISCE literary events, honing my communication and creative skills. Additionally, I was honored as Ms. Riverside Academy (2019-2020 Batch), recognizing my leadership, academic excellence, and overall contribution to the school community. These experiences shaped my ability to lead, organize, and drive impactful initiatives.
-										</p>
-									</div><!--/.timeline-content-->
-								</div><!--/.timeline-->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</section><!--/.education-->
-		<!--education end -->
-
-		<!--skills start -->
-		<section id="skills" class="skills">
-				<div class="skill-content">
-					<div class="section-heading text-center">
-						<h2>skills</h2>
-					</div>
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="single-skill-content">
-									<div class="barWrapper">
-										<span class="progressText">C++ Competitive Coding</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
-													  
-												</div>
-											</div>
-											<h3>90%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">Python with AI/ML/Data science Models</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>85%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">Database Management Systems</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="10" aria-valuemax="100" style="">
-												   
-											   </div>
-											</div>
-											<h3>97%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">Software Development/Engineering</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>90%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="single-skill-content">
-									<div class="barWrapper">
-										<span class="progressText">Javascript Frameworks(Angular, Next, Node, React)</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-												<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
-													
-												</div>
-											</div>
-											<h3>90%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">cloud computing(AWS, GCP, Azure)</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>85%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">Git/Github (Open-Source Contributions & Projects)</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="10" aria-valuemax="100" style="">
-												   
-											   </div>
-											</div>
-											<h3>97%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText"> problem solving, creativity, research & understanding</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>90%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-								</div>
-							</div>
-						</div><!-- /.row -->
-					</div>	<!-- /.container -->		
-				</div><!-- /.skill-content-->
-
-		</section><!--/.skills-->
-		<!--skills end -->
-
-		<!--experience start -->
-		<section id="experience" class="experience">
-			<div class="section-heading text-center">
-				<h2>experience</h2>
-			</div>
-			<div class="container">
-				<div class="experience-content">
-						<div class="main-timeline">
-							<ul>
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-5">
-												<div class="experience-time text-right">
-													<h2>2024 - Present</h2>
-													<h3>Artificial Intelligence Teacher</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5">
-												<div class="timeline">
-													<div class="timeline-content">
-														<h4 class="title">
-															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															GD Goenka Public School(CBSE & Cambridge)
-														</h4>
-														<h5>Lucknow, India</h5>
-														<p class="description">
-															Teaching Artificial Intelligence at the top school, I educate, mentor and guide students into technology and innovation.
-														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
-
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-offset-1 col-md-5 experience-time-responsive">
-												<div class="experience-time">
-													<h2>
-														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2023 - 2024
-													</h2>
-													<h3>Research Scholar</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-5">
-												<div class="timeline">
-													<div class="timeline-content text-right">
-														<h4 class="title">
-															Goel Institute of Technology and Management
-														</h4>
-														<h5>Lucknow, India</h5>
-														<p class="description">
-															Worked and contributed by succesfully publishing research paper during my undergraduate study as a research scholar under guidance of assistant professor and senior professor in the field of Artificial Intelligence, NLP, ML and emerging techniques
-														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5 experience-time-main">
-												<div class="experience-time">
-													<h2>
-														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2023 - 2024
-													</h2>
-													<h3>Research Scholar</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
-
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-5">
-												<div class="experience-time text-right">
-													<h2>2022 - 2023</h2>
-													<h3>Software Engineer/ Developer Intern</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5">
-												<div class="timeline">
-													<div class="timeline-content">
-														<h4 class="title">
-															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															Netcamp Solutions Private Limited
-														</h4>
-														<h5>Kolkata, India</h5>
-														<p class="description">
-															Interned as a Software Engineer developer working on real world projects, including website & Android application development, design, deployment, management,networking and security.
-														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
-
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-offset-1 col-md-5 experience-time-responsive">
-												<div class="experience-time">
-													<h2>
-														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2022 - Present
-													</h2>
-													<h3>Mentor</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-5">
-												<div class="timeline">
-													<div class="timeline-content text-right">
-														<h4 class="title">
-															Think Digital Community-Code Craft Daily (Open coders Community)
-														</h4>
-														<h5>Chennai, India</h5>
-														<p class="description">
-															I mentor junior coder enthusiasts member of Code Craft Daily community, on topics including there overall development of technical skills. 
-														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5 experience-time-main">
-												<div class="experience-time">
-													<h2>
-														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2022 - Present
-													</h2>
-													<h3>Mentor & C++ Coder </h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
-
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-5">
-												<div class="experience-time text-right">
-													<h2>2020 - 2021</h2>
-													<h3>Robotics and Internet of Things Intern/Trainee</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5">
-												<div class="timeline">
-													<div class="timeline-content">
-														<h4 class="title">
-															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															Smartknower Solutions Private Limited
-														</h4>
-														<h5>Chennai, India</h5>
-														<p class="description">
-															Worked as a Robotics and Internet of Things Intern cum trainee in my 1st year of B.Tech journey, grabbing handson industry experience on Robotics, Iot and embedded systems.
-														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
-
-							</ul>
-						</div><!--.main-timeline-->
-					</div><!--.experience-content-->
-			</div>
-
-		</section><!--/.experience-->
-		<!--experience end -->
-
-		<!--profiles start -->
-		<section id="profiles" class="profiles">
-			<div class="profiles-details">
-				<div class="section-heading text-center">
-					<h2>profiles</h2>
-				</div>
-				<div class="container">
-					<div class="profiles-content">
-						<div class="row">
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-themeforest"></i></a>
-										<div class="profile-icon-name">themeforest</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-themeforest"></i></a>
-											<div class="profile-icon-name">themeforest</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-dribbble"></i></a>
-										<div class="profile-icon-name">dribbble</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-dribbble"></i></a>
-											<div class="profile-icon-name">dribbble</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-behance-logo"></i></a>
-										<div class="profile-icon-name">behance</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-behance-logo"></i></a>
-											<div class="profile-icon-name">behance</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile profile-no-border">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-github-logo"></i></a>
-										<div class="profile-icon-name">github</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-github-logo"></i></a>
-											<div class="profile-icon-name">github</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="profile-border"></div>
-						<div class="row">
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-flickr-website-logo-silhouette"></i></a>
-										<div class="profile-icon-name">flickR</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-flickr-website-logo-silhouette"></i></a>
-											<div class="profile-icon-name">flickR</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-smug"></i></a>
-										<div class="profile-icon-name">smungMung</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-smug"></i></a>
-											<div class="profile-icon-name">smungMung</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-squarespace-logo"></i></a>
-										<div class="profile-icon-name">squareSpace</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-squarespace-logo"></i></a>
-											<div class="profile-icon-name">squareSpace</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile profile-no-border">
-									<div class="profile-txt">
-										<a href=""><i class="flaticon-bitbucket-logotype-camera-lens-in-perspective"></i></a>
-										<div class="profile-icon-name">bitBucket</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="flaticon-bitbucket-logotype-camera-lens-in-perspective"></i></a>
-											<div class="profile-icon-name">bitBucket</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</section><!--/.profiles-->
-		<!--profiles end -->
-
-		<!--portfolio start -->
-		<section id="portfolio" class="portfolio">
-			<div class="portfolio-details">
-				<div class="section-heading text-center">
-					<h2>portfolio</h2>
-				</div>
-				<div class="container">
-					<div class="portfolio-content">
-						<div class="isotope">
-							<div class="row">
-
-								<div class="col-sm-4">
-									<div class="item">
-										<img src="assets/images/portfolio/p1.jpg" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="#">
-												ui/ux design
-											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-									<div class="item">
-										<img src="assets/images/portfolio/p2.jpg" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="#">
-												ui/ux design
-											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-								</div><!-- /.col -->
-
-								<div class="col-sm-4">
-									<div class="item">
-										<img src="assets/images/portfolio/p3.jpg" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="#">
-												web design
-											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-								</div><!-- /.col -->
-
-								<div class="col-sm-4">
-									<div class="item">
-										<img src="assets/images/portfolio/p4.jpg" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="#">
-												web development
-											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-									<div class="item">
-										<img src="assets/images/portfolio/p5.jpg" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="#">
-												web development
-											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-								</div><!-- /.col -->
-							</div><!-- /.row -->
-						</div><!--/.isotope-->
-					</div><!--/.gallery-content-->
-				</div><!--/.container-->
-			</div><!--/.portfolio-details-->
-
-		</section><!--/.portfolio-->
-		<!--portfolio end -->
-
-		<!--clients start -->
-		<section id="clients" class="clients">
-			<div class="section-heading text-center">
-				<h2>clients</h2>
-			</div>
-			<div class="clients-area">
-				<div class="container">
-					<div class="owl-carousel owl-theme" id="client">
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c1.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c2.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c3.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c4.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c5.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c6.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c7.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-					</div><!--/.owl-carousel-->
-				</div><!--/.container-->
-			</div><!--/.clients-area-->
-
-		</section><!--/.clients-->
-
-		</section><!--/.clients-->
-		<!--clients end -->
-
-		<!--contact start -->
-		<section id="contact" class="contact">
-			<div class="section-heading text-center">
-				<h2>contact me</h2>
-			</div>
-			<div class="container">
-				<div class="contact-content">
-					<div class="row">
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-							<div class="single-contact-box">
-								<div class="contact-form">
-									<form>
-										<div class="row">
-											<div class="col-sm-6 col-xs-12">
-												<div class="form-group">
-												  <input type="text" class="form-control" id="name" placeholder="Name*" name="name">
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-											<div class="col-sm-6 col-xs-12">
-												<div class="form-group">
-													<input type="email" class="form-control" id="email" placeholder="Email*" name="email">
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-										<div class="row">
-											<div class="col-sm-12">
-												<div class="form-group">
-													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-										<div class="row">
-											<div class="col-sm-12">
-												<div class="form-group">
-													<textarea class="form-control" rows="8" id="comment" placeholder="Message" ></textarea>
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-										<div class="row">
-											<div class="col-sm-12">
-												<div class="single-contact-btn">
-													<a class="contact-btn" href="#" role="button">submit</a>
-												</div><!--/.single-single-contact-btn-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-									</form><!--/form-->
-								</div><!--/.contact-form-->
-							</div><!--/.single-contact-box-->
-						</div><!--/.col-->
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-							<div class="single-contact-box">
-								<div class="contact-adress">
-									<div class="contact-add-head">
-										<h3>Anamika Verma</h3>
-										<p>Software Engineer</p>
-									</div>
-									<div class="contact-add-info">
-										<div class="single-contact-add-info">
-											<h3>phone</h3>
-											<p>NA</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>email</h3>
-											<p>anamikana18@gmail.com</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>website</h3>
-											<p>www.anamikaverma.com</p>
-										</div>
-									</div>
-								</div><!--/.contact-adress-->
-								<div class="hm-foot-icon">
-									<ul>
-										<li><a href="#"><i class="fab fa-leetcode"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fab fa-kaggle"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fab fa-youtube"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fab fa-linkedin"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fab fa-instagram"></i></a></li><!--/li-->
-									</ul><!--/ul-->
-								</div><!--/.hm-foot-icon-->
-							</div><!--/.single-contact-box-->
-						</div><!--/.col-->
-					</div><!--/.row-->
-				</div><!--/.contact-content-->
-			</div><!--/.container-->
-
-		</section><!--/.contact-->
-		<!--contact end -->
-
-		<!--footer-copyright start-->
-		<footer id="footer-copyright" class="footer-copyright">
-			<div class="container">
-				<div class="hm-footer-copyright text-center">
-					<p>
-						&copy; copyright Anamika Verma design and developed by <a href="https://www.anamikaverma.com/">Anamika Verma </a>
-					</p><!--/p-->
-				</div><!--/.text-center-->
-			</div><!--/.container-->
-
-			<div id="scroll-Top">
-				<div class="return-to-top">
-					<i class="fa fa-angle-up " id="scroll-top" ></i>
-				</div>
-				
-			</div><!--/.scroll-Top-->
-			
-        </footer><!--/.footer-copyright-->
-		<!--footer-copyright end-->
-		
-		<!-- Include all js compiled plugins (below), or include individual files as needed -->
-
-		<script src="assets/js/jquery.js"></script>
-        
-        <!--modernizr.min.js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		
-		<!--bootstrap.min.js-->
-        <script src="assets/js/bootstrap.min.js"></script>
-		
-		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js"></script>
-		
-		<!-- jquery.sticky.js -->
-		<script src="assets/js/jquery.sticky.js"></script>
-		
-		<!-- for progress bar start-->
-
-		<!-- progressbar js -->
-		<script src="assets/js/progressbar.js"></script>
-
-		<!-- appear js -->
-		<script src="assets/js/jquery.appear.js"></script>
-
-		<!-- for progress bar end -->
-
-		<!--owl.carousel.js-->
-        <script src="assets/js/owl.carousel.min.js"></script>
-
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-		
-        
-        <!--Custom JS-->
-        <script src="assets/js/custom.js"></script>
-        
-    </body>
-	
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
